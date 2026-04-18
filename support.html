@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Support</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Support‑Chat</h1>
+</header>
+
+<main>
+
+  <div id="chat-box">
+    <div id="messages"></div>
+
+    <input type="text" id="userInput" placeholder="Schreibe deine Nachricht..." onkeydown="if(event.key==='Enter') sendMessage()">
+    <button onclick="sendMessage()">Senden</button>
+  </div>
+
+  <p style="margin-top:20px; color:orange;">
+    Hinweis: Der Support‑Bot ist aktuell kostenlos. Später werden echte Support‑Funktionen hinzugefügt.
+  </p>
+
+  <p><a href="index.html">Zurück zur Startseite</a></p>
+
+</main>
+
+<script>
+let activeRank = localStorage.getItem("rank") || "free";
+let waitingForConfirmation = false;
+
+const responseTimes = {
+  free: 3000,
+  bronze: 2500,
+  silber: 2000,
+  gold: 1500,
+  platin: 800,
+  ultra: 200
+};
+
+function sendMessage() {
+  const input = document.getElementById("userInput");
+  const text = input.value.trim();
+  if (!text) return;
+
+  addMessage("Du", text);
+  input.value = "";
+
+  if (waitingForConfirmation) {
+    if (text.toLowerCase().includes("ja")) {
+      botReply("Super! Ich schließe das Ticket jetzt. Wenn du wieder Hilfe brauchst, bin ich da.");
+      waitingForConfirmation = false;
+    } else {
+      botReply("Alles klar! Hier sind weitere Lösungsvorschläge:\n- Starte deinen Server neu\n- Prüfe deine Einstellungen\n- Teste eine andere Konfiguration\nHat das geholfen?");
+    }
+    return;
+  }
+
+  botReply("Ich schaue mir dein Problem an...");
+  setTimeout(() => {
+    botReply("Hier sind mögliche Lösungen:\n- Überprüfe deine Server‑Einstellungen\n- Starte den Dienst neu\n- Prüfe deine Logs\nHat das geholfen?");
+    waitingForConfirmation = true;
+  }, responseTimes[activeRank]);
+}
+
+function addMessage(sender, text) {
+  const box = document.getElementById("messages");
+  const msg = document.createElement("div");
+  msg.className = sender === "Du" ? "user-msg" : "bot-msg";
+  msg.innerText = sender + ": " + text;
+  box.appendChild(msg);
+  box.scrollTop = box.scrollHeight;
+}
+
+function botReply(text) {
+  setTimeout(() => {
+    addMessage("Bot", text);
+  }, responseTimes[activeRank]);
+}
+</script>
+
+</body>
+</html>

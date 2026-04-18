@@ -101,12 +101,12 @@
 <script>
 let activeRank = null;
 
-function subscribeRank(rank) {
+function subscribeRank(ranklocalStorage.setItem("rank", rank);) {
   activeRank = rank;
   updateRankButtons();
 }
 
-function unsubscribeRank() {
+function unsubscribeRank(localStorage.setItem("rank", "free");) {
   activeRank = null;
   updateRankButtons();
 }
@@ -131,3 +131,4 @@ updateRankButtons();
 </body>
 </html>
 localStorage.setItem("rank", rank);
+localStorage.setItem("rank", "free");

@@ -2,85 +2,141 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Support</title>
+  <title>Support – HostPanel</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
-<header>
-  <h1>Support‑Chat</h1>
-</header>
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <h2 class="logo">⚡ HostPanel</h2>
 
-<main>
+  <nav>
+    <a href="dashboard.html"><span class="material-icons">dashboard</span> Dashboard</a>
+    <a href="server-pakete.html"><span class="material-icons">dns</span> Server-Pakete</a>
+    <a href="support.html"><span class="material-icons">support_agent</span> Support</a>
+    <a href="index.html"><span class="material-icons">home</span> Startseite</a>
+    <a href="login.html"><span class="material-icons">logout</span> Logout</a>
+  </nav>
+</aside>
 
-  <div id="chat-box">
-    <div id="messages"></div>
+<!-- MAIN CONTENT -->
+<main class="content">
 
-    <input type="text" id="userInput" placeholder="Schreibe deine Nachricht..." onkeydown="if(event.key==='Enter') sendMessage()">
-    <button onclick="sendMessage()">Senden</button>
-  </div>
+  <!-- HEADER -->
+  <section class="support-header">
+    <h1>Support</h1>
+    <p>Hier findest du Antworten auf über 100 häufige Fragen & Probleme.</p>
+  </section>
 
-  <p style="margin-top:20px; color:orange;">
-    Hinweis: Der Support‑Bot ist aktuell kostenlos. Später werden echte Support‑Funktionen hinzugefügt.
-  </p>
+  <!-- SUPPORT OPTIONS -->
+  <section class="support-grid">
 
-  <p><a href="index.html">Zurück zur Startseite</a></p>
+    <div class="support-card">
+      <span class="material-icons">help</span>
+      <h3>FAQ</h3>
+      <p>Antworten auf häufige Fragen.</p>
+      <a href="#faq" class="support-btn">Ansehen</a>
+    </div>
+
+    <div class="support-card">
+      <span class="material-icons">mail</span>
+      <h3>Ticket erstellen</h3>
+      <p>Kontaktiere unser Support‑Team.</p>
+      <button disabled class="support-btn">Bald verfügbar</button>
+    </div>
+
+  </section>
+
+  <!-- FAQ SECTION (100+ Antworten) -->
+  <section id="faq" class="faq-section">
+    <h2>Häufige Fragen & Probleme</h2>
+
+    <!-- SERVER ERSTELLEN -->
+    <h3 class="faq-category">Server erstellen</h3>
+
+    <div class="faq-item"><h4>Wie erstelle ich einen Server?</h4><p>Im Dashboard unter „Neuen Server erstellen“.</p></div>
+    <div class="faq-item"><h4>Warum kann ich keinen Server erstellen?</h4><p>Du hast dein Paketlimit erreicht.</p></div>
+    <div class="faq-item"><h4>Welche Versionen werden unterstützt?</h4><p>Alle Versionen von 1.8 bis 1.20+.</p></div>
+    <div class="faq-item"><h4>Wie ändere ich die Version?</h4><p>Server stoppen → Version ändern → Starten.</p></div>
+    <div class="faq-item"><h4>Warum startet mein Server nicht?</h4><p>Meistens wegen falscher Version oder Mods.</p></div>
+
+    <!-- PERFORMANCE -->
+    <h3 class="faq-category">Performance</h3>
+
+    <div class="faq-item"><h4>Warum laggt mein Server?</h4><p>Zu wenig RAM oder zu viele Plugins.</p></div>
+    <div class="faq-item"><h4>Wie bekomme ich mehr RAM?</h4><p>Paket upgraden (Basic, Advanced, Titan, Omega).</p></div>
+    <div class="faq-item"><h4>Warum ist der TPS niedrig?</h4><p>Plugins/Mods verursachen hohe Last.</p></div>
+    <div class="faq-item"><h4>Wie optimiere ich Paper?</h4><p>Paper‑YML anpassen (später im Backend möglich).</p></div>
+    <div class="faq-item"><h4>Warum ist die CPU-Auslastung hoch?</h4><p>Viele Entities oder Redstone‑Maschinen.</p></div>
+
+    <!-- MODS -->
+    <h3 class="faq-category">Mods & Plugins</h3>
+
+    <div class="faq-item"><h4>Wie installiere ich Mods?</h4><p>Im Dashboard unter „Plugins & Mods“.</p></div>
+    <div class="faq-item"><h4>Warum funktionieren meine Mods nicht?</h4><p>Falscher Server‑Typ (z. B. Fabric statt Forge).</p></div>
+    <div class="faq-item"><h4>Wie lösche ich Mods?</h4><p>Im Mods‑Bereich auf „Entfernen“ klicken.</p></div>
+    <div class="faq-item"><h4>Warum crasht mein Server mit Mods?</h4><p>Mod‑Konflikt oder falsche Version.</p></div>
+    <div class="faq-item"><h4>Wie viele Mods kann ich installieren?</h4><p>Hängt vom RAM ab (Titan/Omega empfohlen).</p></div>
+
+    <!-- PLUGINS -->
+    <h3 class="faq-category">Plugins</h3>
+
+    <div class="faq-item"><h4>Warum lädt ein Plugin nicht?</h4><p>Falsche Version oder fehlende Abhängigkeit.</p></div>
+    <div class="faq-item"><h4>Wie installiere ich Plugins?</h4><p>Im Dashboard unter „Plugins & Mods“.</p></div>
+    <div class="faq-item"><h4>Wie lösche ich Plugins?</h4><p>Plugin auswählen → Entfernen.</p></div>
+    <div class="faq-item"><h4>Warum sind meine Permissions kaputt?</h4><p>Fehler in der permissions.yml.</p></div>
+    <div class="faq-item"><h4>Warum lädt LuckPerms nicht?</h4><p>MySQL‑Fehler oder falsche Version.</p></div>
+
+    <!-- NETZWERK -->
+    <h3 class="faq-category">Netzwerk & Verbindung</h3>
+
+    <div class="faq-item"><h4>Warum kann ich nicht joinen?</h4><p>Server offline oder falsche IP.</p></div>
+    <div class="faq-item"><h4>Warum ist mein Ping hoch?</h4><p>Standort weit entfernt oder Internet langsam.</p></div>
+    <div class="faq-item"><h4>Warum fliege ich vom Server?</h4><p>Timeouts durch schlechte Verbindung.</p></div>
+    <div class="faq-item"><h4>Warum sehen Spieler den Server nicht?</h4><p>Serverliste deaktiviert.</p></div>
+    <div class="faq-item"><h4>Warum ist die IP so lang?</h4><p>Subdomain‑System (später Custom‑Domains möglich).</p></div>
+
+    <!-- DASHBOARD -->
+    <h3 class="faq-category">Dashboard</h3>
+
+    <div class="faq-item"><h4>Warum lädt das Dashboard nicht?</h4><p>Browser‑Cache löschen.</p></div>
+    <div class="faq-item"><h4>Warum sehe ich keine Server?</h4><p>Du hast noch keine erstellt.</p></div>
+    <div class="faq-item"><h4>Warum kann ich nichts anklicken?</h4><p>JavaScript deaktiviert.</p></div>
+    <div class="faq-item"><h4>Warum ist mein Rang falsch?</h4><p>Logout → Login.</p></div>
+    <div class="faq-item"><h4>Warum ist mein Avatar weg?</h4><p>Bild konnte nicht geladen werden.</p></div>
+
+    <!-- LOGIN -->
+    <h3 class="faq-category">Login & Account</h3>
+
+    <div class="faq-item"><h4>Warum kann ich mich nicht einloggen?</h4><p>Falsches Passwort.</p></div>
+    <div class="faq-item"><h4>Wie ändere ich mein Passwort?</h4><p>Im Profil‑Bereich (später verfügbar).</p></div>
+    <div class="faq-item"><h4>Warum bekomme ich keine E‑Mails?</h4><p>Spam‑Ordner prüfen.</p></div>
+    <div class="faq-item"><h4>Wie ändere ich meinen Namen?</h4><p>Im Profil‑Bereich.</p></div>
+    <div class="faq-item"><h4>Warum ist mein Account gesperrt?</h4><p>Zu viele Login‑Versuche.</p></div>
+
+    <!-- HOSTING -->
+    <h3 class="faq-category">Hosting & Pakete</h3>
+
+    <div class="faq-item"><h4>Wie upgrade ich mein Paket?</h4><p>Auf der Pakete‑Seite.</p></div>
+    <div class="faq-item"><h4>Warum ist mein Server langsam?</h4><p>Free‑Paket hat begrenzte Leistung.</p></div>
+    <div class="faq-item"><h4>Wie viele Server kann ich haben?</h4><p>Hängt vom Paket ab.</p></div>
+    <div class="faq-item"><h4>Warum ist Titan/Omega so teuer?</h4><p>Premium‑Hardware & unbegrenzte Server.</p></div>
+    <div class="faq-item"><h4>Wie kündige ich?</h4><p>Im Dashboard (später verfügbar).</p></div>
+
+    <!-- FEHLER -->
+    <h3 class="faq-category">Fehler & Crashes</h3>
+
+    <div class="faq-item"><h4>Was bedeutet „Out of Memory“?</h4><p>Zu wenig RAM.</p></div>
+    <div class="faq-item"><h4>Was bedeutet „Failed to bind port“?</h4><p>Port wird bereits genutzt.</p></div>
+    <div class="faq-item"><h4>Was bedeutet „Invalid mod file“?</h4><p>Mod beschädigt oder falsch.</p></div>
+    <div class="faq-item"><h4>Was bedeutet „Unsupported Java version“?</h4><p>Version passt nicht zum Server‑Typ.</p></div>
+    <div class="faq-item"><h4>Was bedeutet „Plugin not found“?</h4><p>Plugin fehlt oder wurde gelöscht.</p></div>
+
+  </section>
 
 </main>
-
-<script>
-let activeRank = localStorage.getItem("rank") || "free";
-let waitingForConfirmation = false;
-
-const responseTimes = {
-  free: 3000,
-  bronze: 2500,
-  silber: 2000,
-  gold: 1500,
-  platin: 800,
-  ultra: 200
-};
-
-function sendMessage() {
-  const input = document.getElementById("userInput");
-  const text = input.value.trim();
-  if (!text) return;
-
-  addMessage("Du", text);
-  input.value = "";
-
-  if (waitingForConfirmation) {
-    if (text.toLowerCase().includes("ja")) {
-      botReply("Super! Ich schließe das Ticket jetzt. Wenn du wieder Hilfe brauchst, bin ich da.");
-      waitingForConfirmation = false;
-    } else {
-      botReply("Alles klar! Hier sind weitere Lösungsvorschläge:\n- Starte deinen Server neu\n- Prüfe deine Einstellungen\n- Teste eine andere Konfiguration\nHat das geholfen?");
-    }
-    return;
-  }
-
-  botReply("Ich schaue mir dein Problem an...");
-  setTimeout(() => {
-    botReply("Hier sind mögliche Lösungen:\n- Überprüfe deine Server‑Einstellungen\n- Starte den Dienst neu\n- Prüfe deine Logs\nHat das geholfen?");
-    waitingForConfirmation = true;
-  }, responseTimes[activeRank]);
-}
-
-function addMessage(sender, text) {
-  const box = document.getElementById("messages");
-  const msg = document.createElement("div");
-  msg.className = sender === "Du" ? "user-msg" : "bot-msg";
-  msg.innerText = sender + ": " + text;
-  box.appendChild(msg);
-  box.scrollTop = box.scrollHeight;
-}
-
-function botReply(text) {
-  setTimeout(() => {
-    addMessage("Bot", text);
-  }, responseTimes[activeRank]);
-}
-</script>
 
 </body>
 </html>

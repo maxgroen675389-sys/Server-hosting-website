@@ -1,102 +1,5 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
-  margin: 0;
-  padding: 0;
-}
+/* ======== GLOBAL ======== */
 
-header {
-  background: #333;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
-
-main {
-  padding: 20px;
-}
-.paket {
-  background: #1e1e1e;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 12px;
-  border: 1px solid #333;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-
-.paket h3 {
-  margin-top: 0;
-  font-size: 22px;
-}
-
-.paket p {
-  margin: 5px 0;
-}
-
-.paket strong {
-  color: #4caf50;
-  font-size: 18px;
-}
-
-.paket .info {
-  color: orange;
-  font-size: 14px;
-}
-
-main {
-  max-width: 700px;
-  margin: auto;
-}
-button {
-  background-color: white;
-  color: black;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-button:hover {
-  background-color: #e6e6e6;
-}
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  margin: 0 10px;
-}
-
-nav a:hover {
-  color: #cccccc;
-}
-.paket {
-  color: white;
-}
-.paket, 
-.paket h3, 
-.paket p, 
-.paket strong {
-  color: white !important;
-}
-.abo-btn {
-  background: white;
-  color: black;
-  padding: 10px 15px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.abo-btn:hover {
-  background: #e6e6e6;
-}
-main a {
-  color: white !important;
-}
-/* Allgemeines Layout */
 body {
   background: #0f0f0f;
   font-family: Arial, sans-serif;
@@ -105,6 +8,34 @@ body {
   padding: 0;
 }
 
+h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0;
+}
+
+/* ======== NAVIGATION ======== */
+
+nav {
+  background: #1a1a1a;
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+nav a {
+  color: #4cafef;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  color: #76c7ff;
+}
+
+/* ======== HEADER ======== */
+
 header h1 {
   text-align: center;
   padding: 30px 0;
@@ -112,7 +43,80 @@ header h1 {
   color: #ffffff;
 }
 
-/* Paket-Karten */
+/* ======== BUTTONS ======== */
+
+.abo-btn {
+  margin-top: 15px;
+  background: #4cafef;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.abo-btn:hover {
+  background: #76c7ff;
+}
+
+/* ======== LINKS ======== */
+
+main a {
+  color: #4cafef;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+main a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================================= */
+/* ======== HOSTING-PAKETE (EIGENES DESIGN) =============== */
+/* ========================================================= */
+
+.hosting-card {
+  background: #141414;
+  padding: 25px;
+  margin: 25px auto;
+  border-radius: 18px;
+  border: 1px solid #2d2d2d;
+  max-width: 750px;
+  transition: 0.25s;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.hosting-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 30px rgba(0,0,0,0.7);
+}
+
+.hosting-card h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.hosting-card ul {
+  padding-left: 20px;
+}
+
+.hosting-card ul li {
+  margin: 6px 0;
+  color: #dcdcdc;
+}
+
+.hosting-card strong {
+  font-size: 22px;
+  color: #4caf50;
+}
+
+/* ========================================================= */
+/* ======== RANG-PAKETE (EIGENES DESIGN) ================== */
+/* ========================================================= */
+
 .paket {
   background: #1a1a1a;
   padding: 25px;
@@ -129,13 +133,11 @@ header h1 {
   box-shadow: 0 0 25px rgba(0,0,0,0.6);
 }
 
-/* Titel */
 .paket h3 {
   font-size: 26px;
   margin-bottom: 10px;
 }
 
-/* Vorteile */
 .paket h4 {
   margin-top: 15px;
   font-size: 18px;
@@ -151,79 +153,15 @@ header h1 {
   color: #dcdcdc;
 }
 
-/* Preis */
 .paket strong {
   font-size: 20px;
   color: #4caf50;
 }
 
-/* Buttons */
-.abo-btn {
-  margin-top: 15px;
-  background: #4cafef;
-  color: black;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  transition: 0.2s;
-}
+/* ========================================================= */
+/* ======== SUPPORT CHAT ================================== */
+/* ========================================================= */
 
-.abo-btn:hover {
-  background: #76c7ff;
-}
-
-/* Zurück-Link */
-main a {
-  color: #4cafef;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-main a:hover {
-  text-decoration: underline;
-}
-
-.paket {
-  background: #1a1a1a;
-  padding: 25px;
-  margin: 25px auto;
-  border-radius: 16px;
-  border: 1px solid #2b2b2b;
-  max-width: 700px;
-  transition: 0.25s;
-  box-shadow: 0 0 15px rgba(0,0,0,0.4);
-}
-
-.paket:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(0,0,0,0.6);
-}
-
-.abo-btn {
-  margin-top: 15px;
-  background: #4cafef;
-  color: black;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  transition: 0.2s;
-}
-
-.abo-btn:hover {
-  background: #76c7ff;
-}
-
-main a {
-  color: #4cafef;
-  font-weight: bold;
-  text-decoration: none;
-}
 #chat-box {
   background: #1a1a1a;
   padding: 20px;
@@ -256,104 +194,26 @@ main a {
   border-radius: 8px;
   margin: 5px 0;
 }
-/* HOSTING-PAKETE – eigenes Design */
-.hosting-card {
-  background: #141414;
-  padding: 25px;
-  margin: 25px auto;
-  border-radius: 18px;
-  border: 1px solid #2d2d2d;
-  max-width: 750px;
-  transition: 0.25s;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+
+#userInput {
+  width: 80%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin-right: 10px;
 }
 
-.hosting-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 30px rgba(0,0,0,0.7);
-}
-
-.hosting-card h3 {
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-
-.hosting-card ul {
-  padding-left: 20px;
-}
-
-.hosting-card ul li {
-  margin: 6px 0;
-  color: #dcdcdc;
-}
-
-.hosting-card strong {
-  font-size: 22px;
-  color: #4caf50;
-}
-
-.hosting-card .abo-btn {
-  margin-top: 15px;
+button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
   background: #4cafef;
   color: black;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  transition: 0.2s;
-}
-/* HOSTING-PAKETE – eigenes Design */
-.hosting-card {
-  background: #141414;
-  padding: 25px;
-  margin: 25px auto;
-  border-radius: 18px;
-  border: 1px solid #2d2d2d;
-  max-width: 750px;
-  transition: 0.25s;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-}
-
-.hosting-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 30px rgba(0,0,0,0.7);
-}
-
-.hosting-card h3 {
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-
-.hosting-card ul {
-  padding-left: 20px;
-}
-
-.hosting-card ul li {
-  margin: 6px 0;
-  color: #dcdcdc;
-}
-
-.hosting-card strong {
-  font-size: 22px;
-  color: #4caf50;
-}
-
-.hosting-card .abo-btn {
-  margin-top: 15px;
-  background: #4cafef;
-  color: black;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 16px;
   font-weight: bold;
   transition: 0.2s;
 }
 
-.hosting-card .abo-btn:hover {
+button:hover {
   background: #76c7ff;
 }
-

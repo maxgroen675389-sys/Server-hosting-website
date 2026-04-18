@@ -80,3 +80,17 @@ nav a:hover {
 .paket strong {
   color: white !important;
 }
+.abo-btn {
+  background: white;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.abo-btn:hover {
+  background: #e6e6e6;
+}
+

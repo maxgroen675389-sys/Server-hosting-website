@@ -8,17 +8,21 @@
 </head>
 <body>
 
-<header>
-  <h1>Dein Dashboard</h1>
-  <nav>
-    <a href="index.html">Startseite</a>
-    <a href="server-pakete.html">Server-Pakete</a>
-    <a href="support.html">Support</a>
-    <a href="login.html">Logout</a>
-  </nav>
-</header>
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <h2 class="logo">⚡ HostPanel</h2>
 
-<main>
+  <nav>
+    <a href="dashboard.html"><span class="material-icons">dashboard</span> Dashboard</a>
+    <a href="server-pakete.html"><span class="material-icons">dns</span> Server-Pakete</a>
+    <a href="support.html"><span class="material-icons">support_agent</span> Support</a>
+    <a href="index.html"><span class="material-icons">home</span> Startseite</a>
+    <a href="login.html"><span class="material-icons">logout</span> Logout</a>
+  </nav>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="content">
 
   <!-- USER INFO -->
   <section class="user-info">
@@ -32,7 +36,7 @@
 
     <div id="serverList" class="server-grid">
 
-      <!-- Beispiel-Serverkarte (Frontend-Template) -->
+      <!-- Beispiel-Serverkarte -->
       <div class="server-card server-offline">
         <h3>Survival Server</h3>
 

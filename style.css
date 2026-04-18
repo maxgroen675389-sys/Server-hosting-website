@@ -307,3 +307,102 @@ button:hover {
   border: 1px solid #ff00ff;
   box-shadow: 0 0 25px rgba(255,0,255,0.4);
 }
+/* ===== Server-Typ Icons ===== */
+
+.server-type {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.server-type .material-icons {
+  font-size: 20px;
+  color: #4cafef; /* Blau */
+}
+
+/* ===== Glow Animation ===== */
+
+.server-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.server-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,150,255,0.15), transparent 60%);
+  transform: rotate(25deg);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.server-card:hover::before {
+  opacity: 1;
+}
+
+/* ===== Hover Lift ===== */
+
+.server-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 35px rgba(0,150,255,0.5); /* Blau */
+}
+
+/* ===== Premium Glow (Gold) ===== */
+
+[data-plan="titan"] {
+  border: 1px solid #ffcc00;
+  box-shadow: 0 0 25px rgba(255,204,0,0.5);
+}
+
+[data-plan="omega"] {
+  border: 1px solid #ff00ff;
+  box-shadow: 0 0 30px rgba(255,0,255,0.5);
+}
+
+/* ===== Offline / Fehler Glow (Rot) ===== */
+
+.server-offline {
+  border: 1px solid #ff4444 !important;
+  box-shadow: 0 0 25px rgba(255,68,68,0.5) !important;
+}
+
+/* ===== Buttons Animation ===== */
+
+button {
+  transition: 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(76, 175, 239, 0.5); /* Blau */
+}
+
+/* ===== Warn-Buttons (Rot) ===== */
+
+button.warn {
+  background: #ff4444;
+}
+
+button.warn:hover {
+  background: #ff6666;
+  box-shadow: 0 0 10px rgba(255,68,68,0.6);
+}
+
+/* ===== Premium Buttons (Gold) ===== */
+
+button.premium {
+  background: #ffcc00;
+  color: #000;
+}
+
+button.premium:hover {
+  background: #ffe066;
+  box-shadow: 0 0 10px rgba(255,204,0,0.6);
+}

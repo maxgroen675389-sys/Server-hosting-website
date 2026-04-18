@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="de">
-<<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
->
+<head>
   <meta charset="UTF-8">
   <title>Dashboard</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
@@ -29,8 +29,51 @@
   <!-- SERVER LIST -->
   <section class="server-section">
     <h2>Deine Server</h2>
+
     <div id="serverList" class="server-grid">
-      <p>Du hast noch keine Server.</p>
+
+      <!-- Beispiel-Serverkarte (Frontend-Template) -->
+      <div class="server-card server-offline">
+        <h3>Survival Server</h3>
+
+        <div class="server-type">
+          <span class="material-icons">dns</span>
+          <span>Paper</span>
+        </div>
+
+        <p>Status: <span style="color:#ff4444;">Offline</span></p>
+        <p>RAM: 4 GB</p>
+        <p>Version: 1.20.1</p>
+
+        <div class="server-buttons">
+          <button class="warn">Starten</button>
+          <button disabled>Stoppen</button>
+          <button disabled>Neustarten</button>
+        </div>
+
+        <button class="log-btn">Logs anzeigen</button>
+      </div>
+
+      <div class="server-card" style="border-color:#4cafef;">
+        <h3>Citybuild Server</h3>
+
+        <div class="server-type">
+          <span class="material-icons">dns</span>
+          <span>Purpur</span>
+        </div>
+
+        <p>Status: <span style="color:#4cafef;">Online</span></p>
+        <p>RAM: 8 GB</p>
+        <p>Version: 1.20.4</p>
+
+        <div class="server-buttons">
+          <button>Stoppen</button>
+          <button>Neustarten</button>
+        </div>
+
+        <button class="log-btn">Logs anzeigen</button>
+      </div>
+
     </div>
   </section>
 

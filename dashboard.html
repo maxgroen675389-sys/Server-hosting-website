@@ -6,32 +6,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Dashboard</h1>
-  </header>
-
-  <main>
-    <p>Willkommen im Dashboard von dqrk_Maxipheiyt.</p>
-    <p>Hier könnten später stehen:</p>
-    <ul>
-      <li>Server starten/stoppen</li>
-      <li>Statistiken</li>
-      <li>Account‑Daten</li>
-      <li>Server‑Verwaltung</li>
-    </ul>
-
-    <p><a href="index.html">Zurück zur Startseite</a></p>
-  </main>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <title>Dashboard</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
 <header>
   <h1>Dein Dashboard</h1>
@@ -45,23 +19,26 @@
 
 <main>
 
+  <!-- USER INFO -->
   <section class="user-info">
     <h2>Willkommen, <span id="userName">Benutzer</span></h2>
     <p>Rang: <span id="userRank">Free</span></p>
   </section>
 
+  <!-- SERVER LIST -->
   <section class="server-section">
     <h2>Deine Server</h2>
     <div id="serverList" class="server-grid">
-      <!-- Wird später vom Backend gefüllt -->
       <p>Du hast noch keine Server.</p>
     </div>
   </section>
 
+  <!-- SERVER ERSTELLEN -->
   <section class="create-server">
     <h2>Neuen Server erstellen</h2>
 
     <input id="serverName" placeholder="Servername">
+
     <select id="serverPlan">
       <option value="free">Free</option>
       <option value="basic">Basic</option>
@@ -70,41 +47,46 @@
       <option value="titan">Titan</option>
       <option value="omega">Omega</option>
     </select>
+
+    <select id="serverType">
+      <option value="vanilla">Vanilla</option>
+      <option value="paper">Paper</option>
+      <option value="spigot">SpigotMC</option>
+      <option value="purpur">Purpur</option>
+      <option value="fabric">Fabric</option>
+      <option value="forge">Forge</option>
+      <option value="neoforge">NeoForge</option>
+      <option value="bungeecord">BungeeCord</option>
+      <option value="velocity">Velocity</option>
+    </select>
+
     <input id="serverRam" placeholder="RAM (z.B. 4G)">
     <input id="serverVersion" placeholder="Version (z.B. 1.20.1)">
+
     <button id="createBtn" disabled>Erstellen (Backend kommt später)</button>
   </section>
 
+  <!-- LOGS -->
   <section class="logs-section">
     <h2>Logs</h2>
     <pre id="logBox">Logs werden hier angezeigt, sobald das Backend fertig ist.</pre>
-    <section class="mods-section">
-  <h2>Plugins & Mods</h2>
+  </section>
 
-  <div class="mods-upload">
-    <input type="file" id="modFile" accept=".jar,.zip">
-    <button disabled>Hochladen (Backend kommt später)</button>
-  </div>
+  <!-- MODS & PLUGINS -->
+  <section class="mods-section">
+    <h2>Plugins & Mods</h2>
 
-  <div id="modsList" class="mods-list">
-    <p>Noch keine Mods oder Plugins installiert.</p>
-  </div>
-</section>
+    <div class="mods-upload">
+      <input type="file" id="modFile" accept=".jar,.zip">
+      <button disabled>Hochladen (Backend kommt später)</button>
+    </div>
 
+    <div id="modsList" class="mods-list">
+      <p>Noch keine Mods oder Plugins installiert.</p>
+    </div>
   </section>
 
 </main>
 
 </body>
 </html>
-<select id="serverType">
-  <option value="vanilla">Vanilla</option>
-  <option value="paper">Paper</option>
-  <option value="spigot">SpigotMC</option>
-  <option value="purpur">Purpur</option>
-  <option value="fabric">Fabric</option>
-  <option value="forge">Forge</option>
-  <option value="neoforge">NeoForge</option>
-  <option value="bungeecord">BungeeCord</option>
-  <option value="velocity">Velocity</option>
-</select>

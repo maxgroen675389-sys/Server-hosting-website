@@ -3,15 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <title>Support – HostPanel</title>
-  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,sans-serif}
+    body{background:radial-gradient(circle at top,#202533 0,#050509 45%,#020204 100%);color:#f5f5f5;min-height:100vh}
+    .sidebar{position:fixed;left:0;top:0;width:230px;height:100%;background:#0b0b0f;border-right:1px solid #222;padding:20px;box-shadow:0 0 20px rgba(0,0,0,.6)}
+    .logo{color:#4cafef;margin-bottom:20px}
+    .sidebar nav a{display:flex;align-items:center;gap:10px;color:#ddd;text-decoration:none;padding:10px;border-radius:8px;margin-bottom:8px;transition:.2s}
+    .sidebar nav a:hover{background:#1a1a1a;color:#fff}
+    .content{margin-left:260px;padding:25px}
+    .support-header{text-align:center;margin-bottom:30px}
+    .support-header h1{font-size:40px;color:#4cafef;text-shadow:0 0 20px rgba(76,175,239,.6)}
+    .support-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-bottom:30px}
+    .support-card{background:#111;padding:20px;border-radius:12px;border:1px solid #333;text-align:center;transition:.25s}
+    .support-card:hover{transform:translateY(-5px);box-shadow:0 0 25px rgba(0,150,255,.4)}
+    .support-card .material-icons{font-size:40px;color:#4cafef}
+    .support-btn{display:inline-block;margin-top:15px;padding:10px 20px;background:#4cafef;color:#000;border-radius:8px;text-decoration:none;font-weight:bold;transition:.2s;border:none;cursor:pointer}
+    .support-btn:hover{background:#63c2ff;box-shadow:0 0 15px rgba(76,175,239,.6)}
+    .ticket-list h2{margin-top:40px;margin-bottom:15px}
+    .ticket-item{background:#111;border:1px solid #333;padding:15px;border-radius:10px;display:flex;align-items:center;gap:15px;margin-bottom:12px}
+    .ticket-icon{font-size:36px;color:#4cafef}
+    .ticket-open{color:#4cafef}
+    .ticket-closed{color:#ff4444}
+    .ticket-view-btn{margin-left:auto;background:#4cafef;padding:8px 14px;border-radius:8px;color:#000;text-decoration:none;font-weight:bold}
+    .faq-section{margin-top:40px}
+    .faq-section h2{margin-bottom:10px}
+    .faq-category{margin-top:30px;margin-bottom:10px;font-size:24px;color:#4cafef;text-shadow:0 0 10px rgba(76,175,239,.5)}
+    .faq-item{background:#111;padding:15px;border-radius:10px;border:1px solid #333;margin-bottom:10px;transition:.25s}
+    .faq-item:hover{box-shadow:0 0 20px rgba(255,204,0,.3)}
+    /* BOT */
+    .bot-section{margin-top:40px}
+    .bot-wrapper{display:grid;grid-template-columns:2fr 1.5fr;gap:20px;align-items:flex-start}
+    .bot-box{background:#111;border:1px solid #333;border-radius:12px;padding:15px;display:flex;flex-direction:column;height:350px}
+    .bot-messages{flex:1;overflow-y:auto;margin-bottom:10px}
+    .bot-msg{margin-bottom:8px;padding:8px 10px;border-radius:8px;font-size:14px}
+    .bot-msg.user{background:#1a1a1a;align-self:flex-end}
+    .bot-msg.bot{background:#101820;border:1px solid #333}
+    .bot-input-row{display:flex;gap:8px}
+    .bot-input-row input{flex:1;padding:10px;border-radius:8px;border:1px solid #333;background:#0b0b0f;color:#fff}
+    .bot-input-row button{padding:10px 16px;border-radius:8px;border:none;background:#4cafef;color:#000;font-weight:bold;cursor:pointer}
+    .bot-status{font-size:12px;color:#aaa;margin-top:4px}
+    .bot-warning{color:#ffcc00}
+    .bot-locked{color:#ff4444}
+    .bot-info{background:#111;border:1px solid #333;border-radius:12px;padding:15px;font-size:14px}
+    @media(max-width:900px){.bot-wrapper{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
 
-<!-- SIDEBAR -->
 <aside class="sidebar">
   <h2 class="logo">⚡ HostPanel</h2>
-
   <nav>
     <a href="dashboard.html"><span class="material-icons">dashboard</span> Dashboard</a>
     <a href="server-pakete.html"><span class="material-icons">dns</span> Server-Pakete</a>
@@ -21,85 +62,77 @@
   </nav>
 </aside>
 
-<!-- MAIN CONTENT -->
 <main class="content">
 
-  <!-- HEADER -->
   <section class="support-header">
     <h1>Support</h1>
-    <p>Hier findest du Hilfe, FAQ und dein Ticket‑System.</p>
+    <p>FAQ, Tickets und ein smarter Support‑Bot, der dein Problem analysiert.</p>
   </section>
 
-  <!-- SUPPORT OPTIONS -->
   <section class="support-grid">
-
     <div class="support-card">
       <span class="material-icons">help</span>
       <h3>FAQ</h3>
       <p>Antworten auf häufige Fragen.</p>
       <a href="#faq" class="support-btn">Ansehen</a>
     </div>
-
     <div class="support-card">
-      <span class="material-icons">mail</span>
-      <h3>Ticket erstellen</h3>
-      <p>Kontaktiere unser Support‑Team.</p>
-      <a href="ticket-erstellen.html" class="support-btn">Erstellen</a>
+      <span class="material-icons">confirmation_number</span>
+      <h3>Tickets</h3>
+      <p>Behalte deine Support‑Anfragen im Blick.</p>
+      <a href="#tickets" class="support-btn">Zu den Tickets</a>
     </div>
-
   </section>
 
-  <!-- TICKET LIST -->
-  <section class="ticket-list">
-    <h2>Deine Tickets</h2>
-
+  <section id="tickets" class="ticket-list">
+    <h2>Beispiel‑Tickets</h2>
     <div class="ticket-item">
       <span class="material-icons ticket-icon">confirmation_number</span>
       <div>
         <h3>Server startet nicht</h3>
         <p>Status: <span class="ticket-open">Offen</span></p>
       </div>
-      <a href="ticket-view.html" class="ticket-view-btn">Ansehen</a>
+      <a href="#" class="ticket-view-btn">Ansehen</a>
     </div>
-
     <div class="ticket-item">
       <span class="material-icons ticket-icon">confirmation_number</span>
       <div>
         <h3>Mods funktionieren nicht</h3>
         <p>Status: <span class="ticket-closed">Geschlossen</span></p>
       </div>
-      <a href="ticket-view.html" class="ticket-view-btn">Ansehen</a>
+      <a href="#" class="ticket-view-btn">Ansehen</a>
     </div>
-
   </section>
 
-  <!-- FAQ (100+ Antworten) -->
+  <section class="bot-section">
+    <h2>Support‑Bot</h2>
+    <div class="bot-wrapper">
+      <div class="bot-box">
+        <div id="botMessages" class="bot-messages">
+          <div class="bot-msg bot">Hi, ich bin dein Support‑Bot. Beschreib dein Problem, und ich schlage dir eine Lösung vor.</div>
+        </div>
+        <div class="bot-input-row">
+          <input id="botInput" type="text" placeholder="Schreib dein Problem hier rein...">
+          <button id="botSend">Senden</button>
+        </div>
+        <div id="botStatus" class="bot-status">Hinweis: Beleidigungen führen zur Sperre nach dem dritten Mal.</div>
+      </div>
+      <div class="bot-info">
+        <h3>Was der Bot kann</h3>
+        <ul style="margin-left:18px;margin-top:8px;line-height:1.4">
+          <li>Erkennt typische Probleme (Server startet nicht, Mods, Plugins, Login, Ping, RAM).</li>
+          <li>Schlägt passende Lösungen vor (z. B. Version prüfen, RAM erhöhen, Mods entfernen).</li>
+          <li>Zählt Beleidigungen mit und sperrt sich nach dem dritten Verstoß dauerhaft.</li>
+        </ul>
+        <p style="margin-top:10px;font-size:13px;color:#aaa">
+          Der Bot ist nur eine Hilfe im Frontend. Echte Fehler‑Logs und tiefere Analysen kommen später über dein Backend.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section id="faq" class="faq-section">
     <h2>Häufige Fragen & Probleme</h2>
 
-    <!-- Kategorien -->
     <h3 class="faq-category">Server erstellen</h3>
-    <div class="faq-item"><h4>Wie erstelle ich einen Server?</h4><p>Im Dashboard unter „Neuen Server erstellen“.</p></div>
-    <div class="faq-item"><h4>Warum startet mein Server nicht?</h4><p>Meistens wegen falscher Version oder Mods.</p></div>
-
-    <h3 class="faq-category">Performance</h3>
-    <div class="faq-item"><h4>Warum laggt mein Server?</h4><p>Zu wenig RAM oder zu viele Plugins.</p></div>
-
-    <h3 class="faq-category">Mods & Plugins</h3>
-    <div class="faq-item"><h4>Warum funktionieren Mods nicht?</h4><p>Falscher Server‑Typ.</p></div>
-
-    <h3 class="faq-category">Netzwerk</h3>
-    <div class="faq-item"><h4>Warum kann ich nicht joinen?</h4><p>Server offline oder falsche IP.</p></div>
-
-    <h3 class="faq-category">Login</h3>
-    <div class="faq-item"><h4>Warum kann ich mich nicht einloggen?</h4><p>Falsches Passwort.</p></div>
-
-    <h3 class="faq-category">Fehler</h3>
-    <div class="faq-item"><h4>Was bedeutet „Out of Memory“?</h4><p>Zu wenig RAM.</p></div>
-
-  </section>
-
-</main>
-
-</body>
-</html>
+    <div class="faq-item"><h4>Wie erstelle ich einen Server?</h4><p>Im Dashboard

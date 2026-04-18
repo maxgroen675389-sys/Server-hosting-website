@@ -217,4 +217,66 @@ button {
 button:hover {
   background: #76c7ff;
 }
+/* ===== Dashboard ===== */
+
+.user-info {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  border: 1px solid #333;
+}
+
+.server-section h2,
+.create-server h2,
+.logs-section h2 {
+  margin-top: 40px;
+}
+
+.server-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.server-card {
+  background: #141414;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #2d2d2d;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+.server-buttons {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.server-card button {
+  flex: 1;
+}
+
+.log-btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.create-server input,
+.create-server select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: none;
+}
+
+.logs-section pre {
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #333;
+  height: 200px;
+  overflow-y: auto;
+}
 

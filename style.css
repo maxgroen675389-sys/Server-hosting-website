@@ -248,3 +248,133 @@ button.warn:hover {
   border: 1px solid #333;
   padding: 15px;
 }
+/* ===== HERO SECTION ===== */
+
+.hero {
+  height: 60vh;
+  background: url('https://i.imgur.com/3ZQ3ZQF.jpeg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  box-shadow: inset 0 0 80px rgba(0,0,0,0.8);
+}
+
+.hero-content h1 {
+  font-size: 60px;
+  color: #4cafef;
+  text-shadow: 0 0 20px rgba(76,175,239,0.8);
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-top: 10px;
+  color: #ddd;
+}
+
+.hero-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #4cafef;
+  color: #000;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.hero-btn:hover {
+  background: #63c2ff;
+  box-shadow: 0 0 20px rgba(76,175,239,0.7);
+}
+
+/* ===== FEATURES ===== */
+
+.features {
+  padding: 40px;
+  text-align: center;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.feature-card {
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #333;
+  transition: 0.25s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0,150,255,0.4);
+}
+
+.feature-card .material-icons {
+  font-size: 40px;
+  color: #4cafef;
+}
+
+/* ===== PRICING PREVIEW ===== */
+
+.pricing-preview {
+  padding: 40px;
+  text-align: center;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.pricing-card {
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #333;
+  transition: 0.25s;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0,150,255,0.4);
+}
+
+.pricing-card.premium {
+  border-color: #ffcc00;
+  box-shadow: 0 0 25px rgba(255,204,0,0.4);
+}
+
+.pricing-card.omega {
+  border-color: #ff00ff;
+  box-shadow: 0 0 25px rgba(255,0,255,0.4);
+}
+
+.pricing-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #4cafef;
+  color: #000;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+  margin-top: 40px;
+}

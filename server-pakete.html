@@ -83,43 +83,19 @@
     <button class="abo-btn" onclick="subscribe('ultimate')">Abonnieren</button>
   </div>
 
-  <p style="margin-top:20px; color:orange;">
-    Hinweis: Zurzeit sind alle Hosting‑Pakete kostenlos nutzbar. Bezahlung wird später hinzugefügt.
-  </p>
+  <!-- TITAN -->
+  <div class="hosting-card" data-plan="titan">
+    <h3>💎 Titan Server</h3>
+    <p>6 vCPU – 32 GB RAM – 160 GB SSD</p>
 
-  <p><a href="index.html">Zurück zur Startseite</a></p>
+    <h4>Vorteile:</h4>
+    <ul>
+      <li>Extrem hohe Leistung</li>
+      <li>Für große Projekte & Communities</li>
+      <li>Premium Netzwerkpriorität</li>
+      <li>Erweiterte Sicherheitsfunktionen</li>
+      <li>24/7 Prioritäts‑Support</li>
+    </ul>
 
-</main>
-
-<script>
-let activePlan = "free";
-
-function subscribe(plan) {
-  activePlan = plan;
-  updateButtons();
-}
-
-function unsubscribe() {
-  activePlan = "free";
-  updateButtons();
-}
-
-function updateButtons() {
-  document.querySelectorAll(".abo-btn").forEach(btn => {
-    const plan = btn.parentElement.getAttribute("data-plan");
-
-    if (plan === activePlan) {
-      btn.innerText = "Deabonnieren";
-      btn.onclick = () => unsubscribe();
-    } else {
-      btn.innerText = "Abonnieren";
-      btn.onclick = () => subscribe(plan);
-    }
-  });
-}
-
-updateButtons();
-</script>
-
-</body>
-</html>
+    <p><strong>30,00€ / Monat</strong></p>
+    <button class="abo-btn" onclick="subscribe('titan')">Abonnieren</button>

@@ -80,9 +80,7 @@
 
     <button onclick="sendTicket()">Ticket senden</button>
 
-  </div>
-
-</main>
+ <button onclick="sendTicket()">Ticket senden</button>
 
 <script>
 async function sendTicket() {
@@ -95,21 +93,22 @@ async function sendTicket() {
     return;
   }
 
-  const res = await fetch("http://localhost:3000/api/ticket", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ category, subject, message })
-  });
+  try {
+    const res = await fetch("http://localhost:3000/api/ticket", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ category, subject, message })
+    });
 
-  const data = await res.json();
+    const data = await res.json();
 
-  if (data.success) {
-    alert("Ticket wurde erfolgreich erstellt!");
-  } else {
-    alert("Fehler beim Erstellen des Tickets.");
+    if (data.success) {
+      alert("Ticket wurde erfolgreich erstellt!");
+    } else {
+      alert("Fehler beim Erstellen des Tickets.");
+    }
+  } catch (err) {
+    alert("Backend nicht erreichbar!");
   }
 }
 </script>
-
-</body>
-</html>

@@ -99,3 +99,39 @@
 
     <p><strong>30,00€ / Monat</strong></p>
     <button class="abo-btn" onclick="subscribe('titan')">Abonnieren</button>
+<script>
+let activePlan = localStorage.getItem("activePlan") || "free";
+
+function subscribe(plan) {
+  activePlan = plan;
+  localStorage.setItem("activePlan", plan);
+  updateButtons();
+}
+
+function unsubscribe() {
+  activePlan = "free";
+  localStorage.setItem("activePlan", "free");
+  updateButtons();
+}
+
+function updateButtons() {
+  document.querySelectorAll(".hosting-card").forEach(card => {
+    const plan = card.getAttribute("data-plan");
+    const btn = card.querySelector(".abo-btn");
+
+    if (!btn) return;
+
+    if (plan === activePlan) {
+      btn.innerText = "Deabonnieren";
+      btn.onclick = () => unsubscribe();
+      btn.style.background = "#ff4444";
+    } else {
+      btn.innerText = "Abonnieren";
+      btn.onclick = () => subscribe(plan);
+      btn.style.background = "#4cafef";
+    }
+  });
+}
+
+updateButtons();
+</script>

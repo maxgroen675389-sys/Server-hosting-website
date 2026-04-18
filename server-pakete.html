@@ -2,169 +2,179 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Server‑Pakete</title>
+  <title>Pakete – HostPanel</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
-<header>
-  <h1>Hosting‑Pakete</h1>
+<aside class="sidebar">
+  <h2 class="logo">⚡ HostPanel</h2>
+
   <nav>
-    <a href="index.html">Startseite</a>
-    <a href="preise.html">Preise</a>
-    <a href="server-pakete.html">Server-Pakete</a>
-    <a href="dashboard.html">Dashboard</a>
-    <a href="support.html">Support</a>
+    <a href="dashboard.html"><span class="material-icons">dashboard</span> Dashboard</a>
+    <a href="server-pakete.html"><span class="material-icons">dns</span> Server-Pakete</a>
+    <a href="support.html"><span class="material-icons">support_agent</span> Support</a>
+    <a href="index.html"><span class="material-icons">home</span> Startseite</a>
+    <a href="login.html"><span class="material-icons">logout</span> Logout</a>
   </nav>
-</header>
+</aside>
 
-<main>
+<main class="content">
 
-  <!-- FREE -->
-  <div class="hosting-card" data-plan="free">
-    <h3>🆓 Free Server</h3>
-    <p>0.5 vCPU – 3 GB RAM – 5 GB SSD</p>
+  <section class="pricing-header">
+    <h1>Unsere Hosting‑Pakete</h1>
+    <p>Wähle das perfekte Paket für deinen Minecraft‑Server.</p>
+  </section>
 
-    <h4>Vorteile:</h4>
-    <ul>
-      <li>3 Server pro Person</li>
-      <li>Ideal zum Testen</li>
-      <li>Keine Kosten</li>
-    </ul>
+  <!-- PAKETE GRID -->
+  <section class="pricing-grid">
 
-    <p><strong>Kostenlos</strong></p>
-    <button class="abo-btn">Standard</button>
-  </div>
+    <div class="pricing-card">
+      <h3>Free</h3>
+      <p class="price">0€ / Monat</p>
+      <ul>
+        <li>1 GB RAM</li>
+        <li>1 Server</li>
+        <li>Standard CPU</li>
+        <li>Basic Support</li>
+      </ul>
+      <button disabled>Aktiv (Beispiel)</button>
+    </div>
 
-  <!-- BASIC -->
-  <div class="hosting-card" data-plan="basic">
-    <h3>⚙️ Basic Server</h3>
-    <p>1 vCPU – 5 GB RAM – 20 GB SSD</p>
+    <div class="pricing-card">
+      <h3>Basic</h3>
+      <p class="price">5€ / Monat</p>
+      <ul>
+        <li>2 GB RAM</li>
+        <li>1 Server</li>
+        <li>Bessere CPU</li>
+        <li>Support per Ticket</li>
+      </ul>
+      <button>Auswählen</button>
+    </div>
 
-    <h4>Vorteile:</h4>
-    <ul>
-      <li>Stabile Performance</li>
-      <li>Für kleine Projekte geeignet</li>
-      <li>Günstiger Einstieg</li>
-    </ul>
+    <div class="pricing-card">
+      <h3>Advanced</h3>
+      <p class="price">10€ / Monat</p>
+      <ul>
+        <li>4 GB RAM</li>
+        <li>2 Server</li>
+        <li>High‑Performance CPU</li>
+        <li>Schneller Support</li>
+      </ul>
+      <button>Auswählen</button>
+    </div>
 
-    <p><strong>4,00€ / Monat</strong></p>
-    <button class="abo-btn">Abonnieren</button>
-  </div>
+    <div class="pricing-card">
+      <h3>Ultimate</h3>
+      <p class="price">20€ / Monat</p>
+      <ul>
+        <li>8 GB RAM</li>
+        <li>3 Server</li>
+        <li>Premium CPU</li>
+        <li>Priorisierter Support</li>
+      </ul>
+      <button>Auswählen</button>
+    </div>
 
-  <!-- ADVANCED -->
-  <div class="hosting-card" data-plan="advanced">
-    <h3>🚀 Advanced Server</h3>
-    <p>2 vCPU – 10 GB RAM – 40 GB SSD</p>
+    <div class="pricing-card premium">
+      <h3>Titan</h3>
+      <p class="price">30€ / Monat</p>
+      <ul>
+        <li>16 GB RAM</li>
+        <li>5 Server</li>
+        <li>Ultra‑CPU</li>
+        <li>Premium Support</li>
+      </ul>
+      <button class="premium-btn">Auswählen</button>
+    </div>
 
-    <h4>Vorteile:</h4>
-    <ul>
-      <li>Hohe Leistung</li>
-      <li>Für mittelgroße Projekte</li>
-      <li>Schnelle Ladezeiten</li>
-    </ul>
+    <div class="pricing-card omega">
+      <h3>Omega</h3>
+      <p class="price">50€ / Monat</p>
+      <ul>
+        <li>32 GB RAM</li>
+        <li>Unbegrenzte Server</li>
+        <li>Extreme CPU</li>
+        <li>VIP Support</li>
+      </ul>
+      <button class="omega-btn">Auswählen</button>
+    </div>
 
-    <p><strong>8,00€ / Monat</strong></p>
-    <button class="abo-btn">Abonnieren</button>
-  </div>
+  </section>
 
-  <!-- ULTIMATE -->
-  <div class="hosting-card" data-plan="ultimate">
-    <h3>🔥 Ultimate Server</h3>
-    <p>4 vCPU – 20 GB RAM – 80 GB SSD</p>
+  <!-- VERGLEICHSTABELLE -->
+  <section class="compare">
+    <h2>Paket‑Vergleich</h2>
 
-    <h4>Vorteile:</h4>
-    <ul>
-      <li>Maximale Power</li>
-      <li>Für große Projekte</li>
-      <li>Beste Performance</li>
-    </ul>
+    <table>
+      <tr>
+        <th>Paket</th>
+        <th>RAM</th>
+        <th>Server</th>
+        <th>CPU</th>
+        <th>Support</th>
+      </tr>
 
-    <p><strong>15,00€ / Monat</strong></p>
-    <button class="abo-btn">Abonnieren</button>
-  </div>
+      <tr>
+        <td>Free</td>
+        <td>1 GB</td>
+        <td>1</td>
+        <td>Standard</td>
+        <td>Basic</td>
+      </tr>
 
-  <!-- TITAN -->
-  <div class="hosting-card" data-plan="titan">
-    <h3>💎 Titan Server</h3>
-    <p>6 vCPU – 32 GB RAM – 160 GB SSD</p>
+      <tr>
+        <td>Basic</td>
+        <td>2 GB</td>
+        <td>1</td>
+        <td>Gut</td>
+        <td>Ticket</td>
+      </tr>
 
-    <h4>Vorteile:</h4>
-    <ul>
-      <li>Extrem hohe Leistung</li>
-      <li>Für große Projekte & Communities</li>
-      <li>Premium Netzwerkpriorität</li>
-      <li>Erweiterte Sicherheitsfunktionen</li>
-      <li>24/7 Prioritäts‑Support</li>
-    </ul>
+      <tr>
+        <td>Advanced</td>
+        <td>4 GB</td>
+        <td>2</td>
+        <td>High‑Performance</td>
+        <td>Schnell</td>
+      </tr>
 
-    <p><strong>30,00€ / Monat</strong></p>
-    <button class="abo-btn">Abonnieren</button>
-  </div>
+      <tr>
+        <td>Ultimate</td>
+        <td>8 GB</td>
+        <td>3</td>
+        <td>Premium</td>
+        <td>Priorisiert</td>
+      </tr>
 
-  <!-- OMEGA -->
-  <div class="hosting-card" data-plan="omega">
-    <h3>🔥 Omega Server</h3>
-    <p>12 vCPU – 64 GB RAM – 320 GB SSD</p>
+      <tr class="titan-row">
+        <td>Titan</td>
+        <td>16 GB</td>
+        <td>5</td>
+        <td>Ultra</td>
+        <td>Premium</td>
+      </tr>
 
-    <h4>Vorteile:</h4>
-    <ul>
-      <li>Maximale Power für Enterprise‑Projekte</li>
-      <li>Höchste Netzwerkpriorität</li>
-      <li>Erweiterte DDoS‑Protection</li>
-      <li>Exklusive Premium‑Features</li>
-      <li>Direkter Support‑Kontakt (Top‑Level)</li>
-      <li>Frühzugang zu neuen Funktionen</li>
-    </ul>
+      <tr class="omega-row">
+        <td>Omega</td>
+        <td>32 GB</td>
+        <td>∞</td>
+        <td>Extreme</td>
+        <td>VIP</td>
+      </tr>
+    </table>
+  </section>
 
-    <p><strong>50,00€ / Monat</strong></p>
-    <button class="abo-btn">Abonnieren</button>
-  </div>
-
-  <p style="margin-top:20px; color:orange;">
-    Hinweis: Zurzeit sind alle Hosting‑Pakete kostenlos nutzbar. Bezahlung wird später hinzugefügt.
-  </p>
-
-  <p><a href="index.html" class="return-link">Zurück zur Startseite</a></p>
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Bereit für deinen Server?</h2>
+    <p>Wähle jetzt dein Paket und starte durch.</p>
+    <a href="dashboard.html" class="cta-btn">Zum Dashboard</a>
+  </section>
 
 </main>
-
-<script>
-let activePlan = localStorage.getItem("activePlan") || "free";
-
-function subscribe(plan) {
-  activePlan = plan;
-  localStorage.setItem("activePlan", plan);
-  updateButtons();
-}
-
-function unsubscribe() {
-  activePlan = "free";
-  localStorage.setItem("activePlan", "free");
-  updateButtons();
-}
-
-function updateButtons() {
-  document.querySelectorAll(".hosting-card").forEach(card => {
-    const plan = card.getAttribute("data-plan");
-    const btn = card.querySelector(".abo-btn");
-
-    if (!btn) return;
-
-    if (plan === activePlan) {
-      btn.innerText = plan === "free" ? "Standard" : "Deabonnieren";
-      btn.onclick = () => unsubscribe();
-      btn.style.background = plan === "free" ? "#4cafef" : "#ff4444";
-    } else {
-      btn.innerText = "Abonnieren";
-      btn.onclick = () => subscribe(plan);
-      btn.style.background = "#4cafef";
-    }
-  });
-}
-
-updateButtons();
-</script>
 
 </body>
 </html>

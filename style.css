@@ -256,3 +256,104 @@ main a {
   border-radius: 8px;
   margin: 5px 0;
 }
+/* HOSTING-PAKETE – eigenes Design */
+.hosting-card {
+  background: #141414;
+  padding: 25px;
+  margin: 25px auto;
+  border-radius: 18px;
+  border: 1px solid #2d2d2d;
+  max-width: 750px;
+  transition: 0.25s;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.hosting-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 30px rgba(0,0,0,0.7);
+}
+
+.hosting-card h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.hosting-card ul {
+  padding-left: 20px;
+}
+
+.hosting-card ul li {
+  margin: 6px 0;
+  color: #dcdcdc;
+}
+
+.hosting-card strong {
+  font-size: 22px;
+  color: #4caf50;
+}
+
+.hosting-card .abo-btn {
+  margin-top: 15px;
+  background: #4cafef;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+/* HOSTING-PAKETE – eigenes Design */
+.hosting-card {
+  background: #141414;
+  padding: 25px;
+  margin: 25px auto;
+  border-radius: 18px;
+  border: 1px solid #2d2d2d;
+  max-width: 750px;
+  transition: 0.25s;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.hosting-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 30px rgba(0,0,0,0.7);
+}
+
+.hosting-card h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.hosting-card ul {
+  padding-left: 20px;
+}
+
+.hosting-card ul li {
+  margin: 6px 0;
+  color: #dcdcdc;
+}
+
+.hosting-card strong {
+  font-size: 22px;
+  color: #4caf50;
+}
+
+.hosting-card .abo-btn {
+  margin-top: 15px;
+  background: #4cafef;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.hosting-card .abo-btn:hover {
+  background: #76c7ff;
+}
+

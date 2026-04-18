@@ -2,8 +2,9 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Ticket erstellen – HostPanel</title>
+  <title>Ticket erstellen</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   <style>
     body {
       background: #0b0b0f;
@@ -14,8 +15,9 @@
     }
 
     .content {
-      margin-left: 260px;
       padding: 30px;
+      max-width: 600px;
+      margin: auto;
     }
 
     .ticket-form {
@@ -23,7 +25,6 @@
       padding: 20px;
       border-radius: 10px;
       border: 1px solid #333;
-      max-width: 500px;
     }
 
     input, select, textarea {
@@ -78,12 +79,17 @@
     <label>Beschreibung</label>
     <textarea id="message" placeholder="Beschreibe dein Problem..."></textarea>
 
+    <!-- WICHTIG: Der Button ruft die Funktion auf -->
     <button onclick="sendTicket()">Ticket senden</button>
 
- <button onclick="sendTicket()">Ticket senden</button>
+  </div>
+
+</main>
 
 <script>
 async function sendTicket() {
+  console.log("sendTicket() wurde ausgeführt"); // Test
+
   const category = document.getElementById("category").value;
   const subject = document.getElementById("subject").value;
   const message = document.getElementById("message").value;
@@ -112,3 +118,6 @@ async function sendTicket() {
   }
 }
 </script>
+
+</body>
+</html>

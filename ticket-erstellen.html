@@ -48,7 +48,25 @@
       <label>Datei anhängen (optional)</label>
       <input type="file">
 
-      <button class="ticket-submit">Ticket senden</button>
+     <button class="ticket-submit" onclick="sendTicket()">Ticket senden</button>
+
+<script>
+async function sendTicket() {
+  const category = document.querySelector("select").value;
+  const subject = document.querySelector("input").value;
+  const message = document.querySelector("textarea").value;
+
+  const res = await fetch("http://localhost:3000/api/ticket", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ category, subject, message })
+  });
+
+  const data = await res.json();
+
+  alert("Ticket wurde erstellt!");
+}
+</script>
 
     </div>
 
@@ -58,3 +76,7 @@
 
 </body>
 </html>
+<select>...</select>
+<input type="text">
+<textarea></textarea>
+<button class="ticket-submit">Ticket senden</button>

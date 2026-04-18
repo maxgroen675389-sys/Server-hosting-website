@@ -33,6 +33,7 @@
     </ul>
 
     <p><strong>Kostenlos</strong></p>
+    <button class="abo-btn">Standard</button>
   </div>
 
   <!-- BASIC -->
@@ -48,7 +49,7 @@
     </ul>
 
     <p><strong>4,00€ / Monat</strong></p>
-    <button class="abo-btn" onclick="subscribe('basic')">Abonnieren</button>
+    <button class="abo-btn">Abonnieren</button>
   </div>
 
   <!-- ADVANCED -->
@@ -64,7 +65,7 @@
     </ul>
 
     <p><strong>8,00€ / Monat</strong></p>
-    <button class="abo-btn" onclick="subscribe('advanced')">Abonnieren</button>
+    <button class="abo-btn">Abonnieren</button>
   </div>
 
   <!-- ULTIMATE -->
@@ -80,7 +81,7 @@
     </ul>
 
     <p><strong>15,00€ / Monat</strong></p>
-    <button class="abo-btn" onclick="subscribe('ultimate')">Abonnieren</button>
+    <button class="abo-btn">Abonnieren</button>
   </div>
 
   <!-- TITAN -->
@@ -98,7 +99,36 @@
     </ul>
 
     <p><strong>30,00€ / Monat</strong></p>
-    <button class="abo-btn" onclick="subscribe('titan')">Abonnieren</button>
+    <button class="abo-btn">Abonnieren</button>
+  </div>
+
+  <!-- OMEGA -->
+  <div class="hosting-card" data-plan="omega">
+    <h3>🔥 Omega Server</h3>
+    <p>12 vCPU – 64 GB RAM – 320 GB SSD</p>
+
+    <h4>Vorteile:</h4>
+    <ul>
+      <li>Maximale Power für Enterprise‑Projekte</li>
+      <li>Höchste Netzwerkpriorität</li>
+      <li>Erweiterte DDoS‑Protection</li>
+      <li>Exklusive Premium‑Features</li>
+      <li>Direkter Support‑Kontakt (Top‑Level)</li>
+      <li>Frühzugang zu neuen Funktionen</li>
+    </ul>
+
+    <p><strong>50,00€ / Monat</strong></p>
+    <button class="abo-btn">Abonnieren</button>
+  </div>
+
+  <p style="margin-top:20px; color:orange;">
+    Hinweis: Zurzeit sind alle Hosting‑Pakete kostenlos nutzbar. Bezahlung wird später hinzugefügt.
+  </p>
+
+  <p><a href="index.html" class="return-link">Zurück zur Startseite</a></p>
+
+</main>
+
 <script>
 let activePlan = localStorage.getItem("activePlan") || "free";
 
@@ -122,9 +152,9 @@ function updateButtons() {
     if (!btn) return;
 
     if (plan === activePlan) {
-      btn.innerText = "Deabonnieren";
+      btn.innerText = plan === "free" ? "Standard" : "Deabonnieren";
       btn.onclick = () => unsubscribe();
-      btn.style.background = "#ff4444";
+      btn.style.background = plan === "free" ? "#4cafef" : "#ff4444";
     } else {
       btn.innerText = "Abonnieren";
       btn.onclick = () => subscribe(plan);
@@ -135,3 +165,6 @@ function updateButtons() {
 
 updateButtons();
 </script>
+
+</body>
+</html>

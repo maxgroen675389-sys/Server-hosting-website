@@ -1,82 +1,73 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <title>Server‑Pakete</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Unsere Server‑Pakete</h1>
-  </header>
+<header>
+  <h1>Hosting‑Pakete</h1>
+</header>
 
-  <main>
+<main>
 
-    <div class="paket" data-plan="free">
-      <h3>🆓 Free Server</h3>
-      <p>0.5 vCPU – 3 GB RAM – 5 GB SSD</p>
-      <p><strong>Kostenlos</strong></p>
-      <p class="info">Max. 3 Server pro Person</p>
-    </div>
+  <div class="paket" data-plan="free">
+    <h3>🆓 Free Server</h3>
+    <p>0.5 vCPU – 3 GB RAM – 5 GB SSD</p>
 
-    <div class="paket" data-plan="basic">
-      <h3>⚙️ Basic Server</h3>
-      <p>1 vCPU – 5 GB RAM – 20 GB SSD</p>
-      <p><strong>4,00€ / Monat</strong></p>
-      <button class="abo-btn" onclick="subscribe('basic')">Abonnieren</button>
-    </div>
+    <h4>Vorteile:</h4>
+    <ul>
+      <li>3 Server pro Person</li>
+      <li>Ideal zum Testen</li>
+      <li>Keine Kosten</li>
+    </ul>
 
-    <div class="paket" data-plan="advanced">
-      <h3>🚀 Advanced Server</h3>
-      <p>2 vCPU – 10 GB RAM – 40 GB SSD</p>
-      <p><strong>8,00€ / Monat</strong></p>
-      <button class="abo-btn" onclick="subscribe('advanced')">Abonnieren</button>
-    </div>
+    <p><strong>Kostenlos</strong></p>
+  </div>
 
-    <div class="paket" data-plan="ultimate">
-      <h3>🔥 Ultimate Server</h3>
-      <p>4 vCPU – 20 GB RAM – 80 GB SSD</p>
-      <p><strong>15,00€ / Monat</strong></p>
-      <button class="abo-btn" onclick="subscribe('ultimate')">Abonnieren</button>
-    </div>
+  <div class="paket" data-plan="basic">
+    <h3>⚙️ Basic Server</h3>
+    <p>1 vCPU – 5 GB RAM – 20 GB SSD</p>
 
-    <p style="margin-top:20px; color:orange;">
-      Hinweis: Aktuell sind alle Pakete kostenlos nutzbar. Bezahlung wird später hinzugefügt.
-    </p>
+    <h4>Vorteile:</h4>
+    <ul>
+      <li>Stabile Performance</li>
+      <li>Für kleine Projekte geeignet</li>
+      <li>Günstiger Einstieg</li>
+    </ul>
 
-    <p><a href="index.html">Zurück zur Startseite</a></p>
+    <p><strong>4,00€ / Monat</strong></p>
+    <button class="abo-btn" onclick="subscribe('basic')">Abonnieren</button>
+  </div>
 
-  </main>
+  <div class="paket" data-plan="advanced">
+    <h3>🚀 Advanced Server</h3>
+    <p>2 vCPU – 10 GB RAM – 40 GB SSD</p>
 
-  <script>
-    let activePlan = "free";
+    <h4>Vorteile:</h4>
+    <ul>
+      <li>Hohe Leistung</li>
+      <li>Für mittelgroße Projekte</li>
+      <li>Schnelle Ladezeiten</li>
+    </ul>
 
-    function subscribe(plan) {
-      activePlan = plan;
-      updateButtons();
-    }
+    <p><strong>8,00€ / Monat</strong></p>
+    <button class="abo-btn" onclick="subscribe('advanced')">Abonnieren</button>
+  </div>
 
-    function unsubscribe() {
-      activePlan = "free";
-      updateButtons();
-    }
+  <div class="paket" data-plan="ultimate">
+    <h3>🔥 Ultimate Server</h3>
+    <p>4 vCPU – 20 GB RAM – 80 GB SSD</p>
 
-    function updateButtons() {
-      document.querySelectorAll(".abo-btn").forEach(btn => {
-        const plan = btn.parentElement.getAttribute("data-plan");
+    <h4>Vorteile:</h4>
+    <ul>
+      <li>Maximale Power</li>
+      <li>Für große Projekte</li>
+      <li>Beste Performance</li>
+    </ul>
 
-        if (plan === activePlan) {
-          btn.innerText = "Deabonnieren";
-          btn.onclick = () => unsubscribe();
-        } else {
-          btn.innerText = "Abonnieren";
-          btn.onclick = () => subscribe(plan);
-        }
-      });
-    }
+    <p><strong>15,00€ / Monat</strong></p>
+    <button class="abo-btn" onclick="subscribe('ultimate')">Abonnieren</button>
+  </div>
 
-    updateButtons();
-  </script>
+  <p style="margin-top:20px; color:orange;">
+    Hinweis: Zurzeit sind alle Hosting‑Pakete kostenlos nutzbar. Bezahlung wird später hinzugefügt.
+  </p>
 
-</body>
-</html>
+  <p><a href="index.html">Zurück zur Startseite</a></p>
+
+</main>
+

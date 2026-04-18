@@ -2,37 +2,131 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Preise – Server Hosting</title>
+  <title>Preise & Ränge</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Unsere Preise</h1>
-  </header>
 
-  <main>
-    <h2>Hosting‑Pakete</h2>
+<header>
+  <h1>Rang‑Pakete</h1>
+</header>
 
-    <div class="paket">
-      <h3>Starter</h3>
-      <p>Perfekt für kleine Projekte.</p>
-      <p><strong>2,99€ / Monat</strong></p>
-    </div>
+<main>
 
-    <div class="paket">
-      <h3>Pro</h3>
-      <p>Für mittlere Server und mehr Leistung.</p>
-      <p><strong>5,99€ / Monat</strong></p>
-    </div>
+  <!-- RANG 1 -->
+  <div class="paket" data-rank="bronze">
+    <h3>🥉 Bronze Rang</h3>
+    <p><strong>1,00€ / Monat</strong></p>
 
-    <div class="paket">
-      <h3>Premium</h3>
-      <p>Maximale Power für große Projekte.</p>
-      <p><strong>9,99€ / Monat</strong></p>
-    </div>
+    <h4>Vorteile:</h4>
+    <ul>
+      <li>Bronze‑Badge im Dashboard</li>
+      <li>Support‑Antwortzeit: Normal</li>
+      <li>Kleine kosmetische Extras</li>
+    </ul>
 
-    <p><a href="index.html">Zurück zur Startseite</a></p>
-  </main>
+    <button class="abo-btn" onclick="subscribeRank('bronze')">Abonnieren</button>
+  </div>
+
+  <!-- RANG 2 -->
+  <div class="paket" data-rank="silber">
+    <h3>🥈 Silber Rang</h3>
+    <p><strong>3,00€ / Monat</strong></p>
+
+    <h4>Vorteile:</h4>
+    <ul>
+      <li>Silber‑Badge im Dashboard</li>
+      <li>Schnellere Support‑Antwortzeit</li>
+      <li>Mehr kosmetische Extras</li>
+    </ul>
+
+    <button class="abo-btn" onclick="subscribeRank('silber')">Abonnieren</button>
+  </div>
+
+  <!-- RANG 3 -->
+  <div class="paket" data-rank="gold">
+    <h3>🥇 Gold Rang</h3>
+    <p><strong>6,00€ / Monat</strong></p>
+
+    <h4>Vorteile:</h4>
+    <ul>
+      <li>Gold‑Badge im Dashboard</li>
+      <li>Priorisierter Support</li>
+      <li>Exklusive Icons & Themes</li>
+    </ul>
+
+    <button class="abo-btn" onclick="subscribeRank('gold')">Abonnieren</button>
+  </div>
+
+  <!-- RANG 4 -->
+  <div class="paket" data-rank="platin">
+    <h3>💎 Platin Rang</h3>
+    <p><strong>10,00€ / Monat</strong></p>
+
+    <h4>Vorteile:</h4>
+    <ul>
+      <li>Platin‑Badge im Dashboard</li>
+      <li>Sehr schneller Support</li>
+      <li>Exklusive Themes + Premium‑Designs</li>
+    </ul>
+
+    <button class="abo-btn" onclick="subscribeRank('platin')">Abonnieren</button>
+  </div>
+
+  <!-- RANG 5 -->
+  <div class="paket" data-rank="ultra">
+    <h3>🔥 Ultra Rang</h3>
+    <p><strong>20,00€ / Monat</strong></p>
+
+    <h4>Vorteile:</h4>
+    <ul>
+      <li>Ultra‑Badge (selten)</li>
+      <li>Höchste Support‑Priorität</li>
+      <li>Exklusive Ultra‑Features</li>
+      <li>Früher Zugang zu neuen Funktionen</li>
+    </ul>
+
+    <button class="abo-btn" onclick="subscribeRank('ultra')">Abonnieren</button>
+  </div>
+
+  <!-- Hinweis -->
+  <p style="margin-top:20px; color:orange;">
+    Hinweis: Zurzeit sind alle Ränge kostenlos nutzbar. Bezahlung wird später hinzugefügt.
+  </p>
+
+  <p><a href="index.html">Zurück zur Startseite</a></p>
+
+</main>
+
+<script>
+let activeRank = null;
+
+function subscribeRank(rank) {
+  activeRank = rank;
+  updateRankButtons();
+}
+
+function unsubscribeRank() {
+  activeRank = null;
+  updateRankButtons();
+}
+
+function updateRankButtons() {
+  document.querySelectorAll(".abo-btn").forEach(btn => {
+    const rank = btn.parentElement.getAttribute("data-rank");
+
+    if (rank === activeRank) {
+      btn.innerText = "Deabonnieren";
+      btn.onclick = () => unsubscribeRank();
+    } else {
+      btn.innerText = "Abonnieren";
+      btn.onclick = () => subscribeRank(rank);
+    }
+  });
+}
+
+updateRankButtons();
+</script>
+
 </body>
 </html>
-

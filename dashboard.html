@@ -138,3 +138,23 @@
     <h2>Plugins & Mods</h2>
 
     <div class="mods-upload">
+      <input type="file" id="modFile" accept=".jar,.zip">
+      <button disabled>Hochladen (Backend kommt später)</button>
+    </div>
+
+    <div id="modsList" class="mods-list">
+      <p>Noch keine Mods oder Plugins installiert.</p>
+    </div>
+  </section>
+
+</main>
+
+<script>
+function toggleProfilePopup() {
+  const popup = document.getElementById("profilePopup");
+  popup.style.display = popup.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>

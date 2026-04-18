@@ -3,58 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <title>Ticket erstellen – HostPanel</title>
-  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    body {
+      background: #0b0b0f;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .content {
+      margin-left: 260px;
+      padding: 30px;
+    }
+
+    .ticket-form {
+      background: #111;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #333;
+      max-width: 500px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      background: #0b0b0f;
+      color: #fff;
+    }
+
+    button {
+      padding: 12px 20px;
+      background: #4cafef;
+      border: none;
+      border-radius: 8px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #63c2ff;
+    }
+  </style>
 </head>
 <body>
 
-<aside class="sidebar">
-  <h2 class="logo">⚡ HostPanel</h2>
-
-  <nav>
-    <a href="dashboard.html"><span class="material-icons">dashboard</span> Dashboard</a>
-    <a href="server-pakete.html"><span class="material-icons">dns</span> Server-Pakete</a>
-    <a href="support.html"><span class="material-icons">support_agent</span> Support</a>
-    <a href="index.html"><span class="material-icons">home</span> Startseite</a>
-    <a href="login.html"><span class="material-icons">logout</span> Logout</a>
-  </nav>
-</aside>
-
 <main class="content">
 
-  <section class="ticket-create">
-    <h1>Ticket erstellen</h1>
-    <p>Beschreibe dein Problem so genau wie möglich.</p>
+  <h1>Ticket erstellen</h1>
+  <p>Beschreibe dein Problem so genau wie möglich.</p>
 
-    <div class="ticket-form">
+  <div class="ticket-form">
 
-      <label>Kategorie</label>
-      <select>
-        <option>Server</option>
-        <option>Mods</option>
-        <option>Plugins</option>
-        <option>Performance</option>
-        <option>Netzwerk</option>
-        <option>Login</option>
-        <option>Sonstiges</option>
-      </select>
+    <label>Kategorie</label>
+    <select id="category">
+      <option>Server</option>
+      <option>Mods</option>
+      <option>Plugins</option>
+      <option>Performance</option>
+      <option>Netzwerk</option>
+      <option>Login</option>
+      <option>Sonstiges</option>
+    </select>
 
-      <label>Betreff</label>
-      <input type="text" placeholder="z. B. Server startet nicht">
+    <label>Betreff</label>
+    <input id="subject" type="text" placeholder="z. B. Server startet nicht">
 
-      <label>Beschreibung</label>
-      <textarea placeholder="Beschreibe dein Problem..."></textarea>
+    <label>Beschreibung</label>
+    <textarea id="message" placeholder="Beschreibe dein Problem..."></textarea>
 
-      <label>Datei anhängen (optional)</label>
-      <input type="file">
+    <button onclick="sendTicket()">Ticket senden</button>
 
-     <button class="ticket-submit" onclick="sendTicket()">Ticket senden</button>
+  </div>
+
+</main>
 
 <script>
 async function sendTicket() {
-  const category = document.querySelector("select").value;
-  const subject = document.querySelector("input").value;
-  const message = document.querySelector("textarea").value;
+  const category = document.getElementById("category").value;
+  const subject = document.getElementById("subject").value;
+  const message = document.getElementById("message").value;
+
+  if (!subject || !message) {
+    alert("Bitte Betreff und Beschreibung ausfüllen.");
+    return;
+  }
 
   const res = await fetch("http://localhost:3000/api/ticket", {
     method: "POST",
@@ -64,19 +103,13 @@ async function sendTicket() {
 
   const data = await res.json();
 
-  alert("Ticket wurde erstellt!");
+  if (data.success) {
+    alert("Ticket wurde erfolgreich erstellt!");
+  } else {
+    alert("Fehler beim Erstellen des Tickets.");
+  }
 }
 </script>
 
-    </div>
-
-  </section>
-
-</main>
-
 </body>
 </html>
-<select>...</select>
-<input type="text">
-<textarea></textarea>
-<button class="ticket-submit">Ticket senden</button>

@@ -15,3 +15,35 @@ header {
 main {
   padding: 20px;
 }
+.paket {
+  background: #1e1e1e;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 12px;
+  border: 1px solid #333;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.paket h3 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.paket p {
+  margin: 5px 0;
+}
+
+.paket strong {
+  color: #4caf50;
+  font-size: 18px;
+}
+
+.paket .info {
+  color: orange;
+  font-size: 14px;
+}
+
+main {
+  max-width: 700px;
+  margin: auto;
+}

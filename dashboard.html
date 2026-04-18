@@ -8,6 +8,19 @@
 </head>
 <body>
 
+<!-- PROFIL BUTTON -->
+<div class="profile-button" onclick="toggleProfilePopup()">
+  <span class="material-icons">account_circle</span>
+</div>
+
+<!-- PROFIL POPUP -->
+<div id="profilePopup" class="profile-popup">
+  <img src="https://i.imgur.com/6VBx3io.png" class="avatar">
+  <h3 id="popupName">Benutzer</h3>
+  <p id="popupRank" class="rank-badge">Free</p>
+  <a href="profil.html" class="profile-link">Profil öffnen</a>
+</div>
+
 <!-- SIDEBAR -->
 <aside class="sidebar">
   <h2 class="logo">⚡ HostPanel</h2>
@@ -125,16 +138,3 @@
     <h2>Plugins & Mods</h2>
 
     <div class="mods-upload">
-      <input type="file" id="modFile" accept=".jar,.zip">
-      <button disabled>Hochladen (Backend kommt später)</button>
-    </div>
-
-    <div id="modsList" class="mods-list">
-      <p>Noch keine Mods oder Plugins installiert.</p>
-    </div>
-  </section>
-
-</main>
-
-</body>
-</html>

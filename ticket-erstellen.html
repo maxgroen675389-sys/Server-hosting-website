@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Ticket erstellen – HostPanel</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+<aside class="sidebar">
+  <h2 class="logo">⚡ HostPanel</h2>
+
+  <nav>
+    <a href="dashboard.html"><span class="material-icons">dashboard</span> Dashboard</a>
+    <a href="server-pakete.html"><span class="material-icons">dns</span> Server-Pakete</a>
+    <a href="support.html"><span class="material-icons">support_agent</span> Support</a>
+    <a href="index.html"><span class="material-icons">home</span> Startseite</a>
+    <a href="login.html"><span class="material-icons">logout</span> Logout</a>
+  </nav>
+</aside>
+
+<main class="content">
+
+  <section class="ticket-create">
+    <h1>Ticket erstellen</h1>
+    <p>Beschreibe dein Problem so genau wie möglich.</p>
+
+    <div class="ticket-form">
+
+      <label>Kategorie</label>
+      <select>
+        <option>Server</option>
+        <option>Mods</option>
+        <option>Plugins</option>
+        <option>Performance</option>
+        <option>Netzwerk</option>
+        <option>Login</option>
+        <option>Sonstiges</option>
+      </select>
+
+      <label>Betreff</label>
+      <input type="text" placeholder="z. B. Server startet nicht">
+
+      <label>Beschreibung</label>
+      <textarea placeholder="Beschreibe dein Problem..."></textarea>
+
+      <label>Datei anhängen (optional)</label>
+      <input type="file">
+
+      <button class="ticket-submit">Ticket senden</button>
+
+    </div>
+
+  </section>
+
+</main>
+
+</body>
+</html>

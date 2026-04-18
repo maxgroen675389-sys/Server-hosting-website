@@ -9,6 +9,13 @@
 
 <header>
   <h1>Rang‑Pakete</h1>
+  <nav>
+    <a href="index.html">Startseite</a>
+    <a href="preise.html">Preise</a>
+    <a href="server-pakete.html">Server-Pakete</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="support.html">Support</a>
+  </nav>
 </header>
 
 <main>
@@ -21,7 +28,7 @@
     <h4>Vorteile:</h4>
     <ul>
       <li>Bronze‑Badge im Dashboard</li>
-      <li>Support‑Antwortzeit: Normal</li>
+      <li>Normale Support‑Antwortzeit</li>
       <li>Kleine kosmetische Extras</li>
     </ul>
 
@@ -66,7 +73,7 @@
     <h4>Vorteile:</h4>
     <ul>
       <li>Platin‑Badge im Dashboard</li>
-      <li>Sehr schneller Support</li>
+      <li>Sehr schnelle Support‑Antwortzeit</li>
       <li>Exklusive Themes + Premium‑Designs</li>
     </ul>
 
@@ -99,18 +106,18 @@
 </main>
 
 <script>
-let activeRank = null;
+let activeRank = localStorage.getItem("rank") || null;
 
-function subscribeRank(rank);) {
+function subscribeRank(rank) {
   activeRank = rank;
+  localStorage.setItem("rank", rank);
   updateRankButtons();
-  ranklocalStorage.setItem("rank", rank
 }
 
-function unsubscribeRank(localStorage.setItem();) {
+function unsubscribeRank() {
   activeRank = null;
+  localStorage.setItem("rank", "free");
   updateRankButtons();
-  "rank", "free"
 }
 
 function updateRankButtons() {
@@ -132,5 +139,4 @@ updateRankButtons();
 
 </body>
 </html>
-localStorage.setItem("rank", rank);
-localStorage.setItem("rank", "free");
+

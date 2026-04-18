@@ -235,3 +235,75 @@ a.return-link:hover {
     margin-right: 10px;
   }
 }
+/* ===== Icons für Server-Typ ===== */
+
+.server-type {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.server-type .material-icons {
+  font-size: 20px;
+  color: #4cafef;
+}
+
+/* ===== Glow Animation ===== */
+
+.server-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.server-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,150,255,0.15), transparent 60%);
+  transform: rotate(25deg);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.server-card:hover::before {
+  opacity: 1;
+}
+
+/* ===== Smooth Hover Lift ===== */
+
+.server-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.server-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 35px rgba(0,150,255,0.5);
+}
+
+/* ===== Buttons Animation ===== */
+
+button {
+  transition: 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(76, 175, 239, 0.5);
+}
+
+/* ===== Premium Glow für Titan & Omega ===== */
+
+[data-plan="titan"] {
+  border: 1px solid #00aaff;
+  box-shadow: 0 0 20px rgba(0,170,255,0.4);
+}
+
+[data-plan="omega"] {
+  border: 1px solid #ff00ff;
+  box-shadow: 0 0 25px rgba(255,0,255,0.4);
+}

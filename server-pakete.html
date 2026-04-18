@@ -1,10 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Server‑Pakete</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
 <header>
   <h1>Hosting‑Pakete</h1>
+  <nav>
+    <a href="index.html">Startseite</a>
+    <a href="preise.html">Preise</a>
+    <a href="server-pakete.html">Server-Pakete</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="support.html">Support</a>
+  </nav>
 </header>
 
 <main>
 
-  <div class="paket" data-plan="free">
+  <!-- FREE -->
+  <div class="hosting-card" data-plan="free">
     <h3>🆓 Free Server</h3>
     <p>0.5 vCPU – 3 GB RAM – 5 GB SSD</p>
 
@@ -18,7 +35,8 @@
     <p><strong>Kostenlos</strong></p>
   </div>
 
-  <div class="paket" data-plan="basic">
+  <!-- BASIC -->
+  <div class="hosting-card" data-plan="basic">
     <h3>⚙️ Basic Server</h3>
     <p>1 vCPU – 5 GB RAM – 20 GB SSD</p>
 
@@ -33,7 +51,8 @@
     <button class="abo-btn" onclick="subscribe('basic')">Abonnieren</button>
   </div>
 
-  <div class="paket" data-plan="advanced">
+  <!-- ADVANCED -->
+  <div class="hosting-card" data-plan="advanced">
     <h3>🚀 Advanced Server</h3>
     <p>2 vCPU – 10 GB RAM – 40 GB SSD</p>
 
@@ -48,7 +67,8 @@
     <button class="abo-btn" onclick="subscribe('advanced')">Abonnieren</button>
   </div>
 
-  <div class="paket" data-plan="ultimate">
+  <!-- ULTIMATE -->
+  <div class="hosting-card" data-plan="ultimate">
     <h3>🔥 Ultimate Server</h3>
     <p>4 vCPU – 20 GB RAM – 80 GB SSD</p>
 
@@ -71,3 +91,35 @@
 
 </main>
 
+<script>
+let activePlan = "free";
+
+function subscribe(plan) {
+  activePlan = plan;
+  updateButtons();
+}
+
+function unsubscribe() {
+  activePlan = "free";
+  updateButtons();
+}
+
+function updateButtons() {
+  document.querySelectorAll(".abo-btn").forEach(btn => {
+    const plan = btn.parentElement.getAttribute("data-plan");
+
+    if (plan === activePlan) {
+      btn.innerText = "Deabonnieren";
+      btn.onclick = () => unsubscribe();
+    } else {
+      btn.innerText = "Abonnieren";
+      btn.onclick = () => subscribe(plan);
+    }
+  });
+}
+
+updateButtons();
+</script>
+
+</body>
+</html>

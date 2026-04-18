@@ -338,4 +338,58 @@ button:hover {
   opacity: 0.6;
   cursor: not-allowed;
 }
+/* ===== Modernes Dashboard Premium Upgrade ===== */
+
+main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.server-card {
+  background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+  padding: 22px;
+  border-radius: 14px;
+  border: 1px solid #2d2d2d;
+  box-shadow: 0 0 25px rgba(0,0,0,0.6);
+  transition: 0.25s ease;
+}
+
+.server-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0,150,255,0.5);
+}
+
+.server-card h3 {
+  color: #4cafef;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.user-info {
+  background: linear-gradient(145deg, #111, #1b1b1b);
+  border: 1px solid #333;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.create-server input,
+.create-server select {
+  background: #111;
+  border: 1px solid #333;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.logs-section pre {
+  background: #0c0c0c;
+  border: 1px solid #333;
+  padding: 20px;
+  border-radius: 12px;
+  height: 250px;
+  overflow-y: auto;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
 

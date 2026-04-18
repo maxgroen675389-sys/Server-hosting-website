@@ -93,4 +93,7 @@ nav a:hover {
 .abo-btn:hover {
   background: #e6e6e6;
 }
+main a {
+  color: white !important;
+}
 

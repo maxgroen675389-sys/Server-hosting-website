@@ -279,4 +279,63 @@ button:hover {
   height: 200px;
   overflow-y: auto;
 }
+/* ===== Modernes Dashboard Upgrade ===== */
+
+.server-card {
+  background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid #2d2d2d;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  transition: 0.2s ease;
+}
+
+.server-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px rgba(0,150,255,0.4);
+}
+
+.server-card h3 {
+  color: #4cafef;
+  margin-bottom: 10px;
+}
+
+.server-buttons button,
+.log-btn {
+  background: #4cafef;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.server-buttons button:hover,
+.log-btn:hover {
+  opacity: 0.8;
+}
+
+.user-info {
+  background: linear-gradient(145deg, #111, #1b1b1b);
+  border: 1px solid #333;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+.create-server input,
+.create-server select {
+  background: #111;
+  border: 1px solid #333;
+  color: white;
+}
+
+.create-server button {
+  background: #4cafef;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 

@@ -4,8 +4,37 @@
   <meta charset="UTF-8">
   <title>Server‑Pakete</title>
   <link rel="stylesheet" href="style.css">
-</head>
-<body>
+</head><script>
+let activePlan = "free";
+
+function subscribe(plan) {
+  activePlan = plan;
+  updateButtons();
+}
+
+function unsubscribe() {
+  activePlan = "free";
+  updateButtons();
+}
+
+function updateButtons() {
+  document.querySelectorAll(".abo-btn").forEach(btn => {
+    const plan = btn.parentElement.getAttribute("data-plan");
+
+    if (plan === activePlan) {
+      btn.innerText = "Deabonnieren";
+      btn.onclick = () => unsubscribe();
+    } else {
+      btn.innerText = "Abonnieren";
+      btn.onclick = () => subscribe(plan);
+    }
+  });
+}
+
+updateButtons();
+</script>
+
+
   <header>
     <h1>Unsere Server‑Pakete</h1>
   </header>
@@ -39,3 +68,6 @@
   <p><strong>15,00€ / Monat</strong></p>
   <button class="abo-btn" onclick="subscribe('ultimate')">Abonnieren</button>
 </div>
+<p style="margin-top:20px; color:orange;">
+  Hinweis: Aktuell sind alle Pakete kostenlos nutzbar. Bezahlung wird später hinzugefügt.
+</p>
